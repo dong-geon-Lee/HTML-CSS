@@ -11,6 +11,8 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -34,11 +36,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-grey-dark-2);
-  background-image: linear-gradient(
-    to right bottom,
-    var(--color-grey-light-1),
-    var(--color-grey-dark-2)
-  );
+  background-image: linear-gradient(to right bottom, aqua, green);
   background-size: conver;
   background-repeat: no-repeat;
   min-height: 100vh;
