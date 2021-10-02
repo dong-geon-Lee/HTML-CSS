@@ -1,17 +1,8 @@
-/*
-COLORS
+@import "base";
+@import "layout";
+@import "components";
 
-Primary: #eb2f64
-Primary light: #FF3366
-Primary dark: #BA265D
-
-Grey light 1: #faf9f9
-Grey light 2: #f4f2f2
-Grey light 3: #f0eeee
-Grey light 4: #ccc
-
-Grey dark 1: #333
-Grey dark 2: #777
-Grey dark 3: #999
-
-*/
+// 1. *, html, body 의 차이점
+// 2. max, min 이 붙는 max-width, width, min-height, height 차이점
+// 3. transform, transition, animation 의 사용법 및 차이점
+// 4. 의사 클래스와 수도 클래스의 차이점 및 개념알기(active,focus,hover,::before,::after,:not)
