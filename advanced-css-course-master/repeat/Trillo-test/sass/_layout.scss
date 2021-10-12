@@ -1,0 +1,57 @@
+.container {
+  background-color: #fff;
+  max-width: 120rem;
+  min-height: 50rem;
+  margin: 8rem auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem; // header의 최소 높이를 정해둔다.
+  background-color: #fff;
+  border-bottom: var(--line);
+  font-size: 1.4rem;
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-view {
+  flex: 1;
+  background-color: #fff;
+}
+
+.detail {
+  display: flex;
+  background-color: var(--color-grey-light-1);
+  padding: 4.5rem;
+  border-bottom: var(--line);
+  font-size: 1.4rem;
+}
+
+.description {
+  flex: 0 0 60%;
+  padding: 3rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  margin-right: 4.5rem;
+}
+
+.user-reviews {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
