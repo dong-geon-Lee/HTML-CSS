@@ -16,6 +16,7 @@
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 
   --line: 3px solid var(--color-grey-light-2);
+  --line2: 1px solid var(--color-primary--light);
 }
 
 * {
@@ -35,12 +36,12 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
   min-height: 100vh;
-  line-height: 1.6;
-  color: var(--color-grey-dark-2);
   background-image: linear-gradient(to right bottom, aqua, green);
   background-size: cover;
   background-repeat: no-repeat;
+  color: var(--color-grey-dark-2);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
