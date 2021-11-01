@@ -1,4 +1,32 @@
 .footer {
-  background-color: rgb(105, 16, 128);
+  background-color: $color-secondary;
   grid-column: full-start / full-end;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 3.5rem;
+  list-style: none;
+  padding: 4rem;
+  margin-top: 6rem;
+  align-items: center;
+  text-align: center;
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+}
+
+.copyright {
+  padding: 4rem 0;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: $color-grey-light-2;
 }

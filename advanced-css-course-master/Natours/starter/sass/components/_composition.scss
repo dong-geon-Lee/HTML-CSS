@@ -1,0 +1,41 @@
+.composition {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  position: relative;
+
+  &__photo {
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    border-radius: 2px;
+    transition: all 0.2s;
+
+    &--p1 {
+      width: 200px;
+    }
+
+    &--p2 {
+      width: 200px;
+    }
+
+    &--p3 {
+      width: 200px;
+    }
+
+    &--p4 {
+      width: 200px;
+      height: 133px;
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 2;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+  // composition:hover composition__photo:not(:hover)
+}
