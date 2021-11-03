@@ -6,6 +6,7 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
   position: relative;
+  transition: transform 0.3s;
 
   &:not(:last-child) {
     margin-right: 6rem;
@@ -14,6 +15,10 @@
   &__icon {
     font-size: 6rem;
     color: $color-primary-dark;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
   }
 
   &__text {
