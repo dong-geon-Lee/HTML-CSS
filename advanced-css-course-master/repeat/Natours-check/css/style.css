@@ -1,0 +1,687 @@
+@charset "UTF-8";
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    opacity: 0.8;
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    opacity: 0.8;
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* 애니메이션으로 발생하는 약간의 흔들림 방지 용도! */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    padding-left: 3.5rem;
+    animation: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 2s; 
+      animation-iteration-count: 2; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    padding-left: 1.75rem;
+    /* 키워드 축약 */
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+/* 수도 클래스 */
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10rem;
+  /* 모든 애니메이션 속성을 허용하고 축약 표현으로 .2s 사용 가능.
+  이 transition 속성은 hover와 active에 적용됩니다.
+  keyFrames를 써서 복잡하게 할 수 있는 방법과 대조되고 있다. */
+  position: relative;
+  transition: all 0.2s;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn--green {
+  background-color: #55c57a;
+  color: #fff; }
+  .btn--green::after {
+    background-color: #55c57a; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s;
+  justify-self: start; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.card {
+  position: relative;
+  height: 52rem; }
+  .card__side {
+    height: 52rem;
+    transition: all 0.8s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+.composition {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  position: relative; }
+  .composition__photo {
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    transition: all 0.2s; }
+    .composition__photo--p1 {
+      width: 200px; }
+    .composition__photo--p2 {
+      width: 200px; }
+    .composition__photo--p3 {
+      width: 200px; }
+    .composition__photo--p4 {
+      width: 200px;
+      height: 133px; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 2; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: transform 0.3s; }
+  .feature-box:not(:last-child) {
+    margin-right: 6rem; }
+  .feature-box__icon {
+    font-size: 6rem;
+    color: #28b485; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.story {
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 6rem;
+  margin: 0 auto;
+  transform: skewX(-12deg);
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  box-shadow: 2rem 3rem 6rem rgba(0, 0, 0, 0.1); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    transform: skewX(12deg) translateX(-3rem);
+    position: relative; }
+  .story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden; }
+  .bg-video__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -0.4rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    width: 1.3rem;
+    height: 1.3rem;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    background-color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.3); }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    color: #f7f7f7;
+    width: 80%;
+    float: right; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.header {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 인라인 요소는 텍스트 처럼 취급된다?? */
+    text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -16rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem; }
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }
+
+/* 
+1. CSS 케스케이딩 적용 방식 
+
+인라인 스타일 / id / class / element 순서로 
+특이성 및 구체성을 계산해서 제일 높은 요소로 CSS를 적용합니다. 
+
+아래와 같은 좌표 형태로 계산이 진행됩니다. 
+(0,0,0,0) inline,id,class,element 
+
+css 적용 과정에서 아무리 많은 하위 요소들을 넣어도 상위 요소
+1개에 이길 수 없습니다. 상위 요소 1개가 모든 하위 요소를 이기고 
+더 구체적으로 판단합니다. 
+
+예를 들어 클래스가 3개 적용된 (0,0,3,0) 상태에서 id 가 1개가 
+적용되어 있다면 (0,1,0,0) id 1개가 적용된 css 선인이 승리합니다.
+
+또, 인라인 요소가 1개 선언되면 (1,0,0,0) id랑 class가 여러개 선언
+되어 있어도 (0,3,2,0) 인라인 요소보다 구체적이지 않다고 판단합니다.
+
+중복 선언되는 셀렉터에서 hover를 선언 할 떄도 케스케이딩값이 낮으면
+전혀 작동하지않습니다. 
+
+2. rem, em, %, vh, vw 계산 방법 
+
+rem 는 브라우저의 default를 상대적으로 참조한다.
+예를 들면 html, body, * 같은 곳에서 font-size를 정하면
+여기를 root 로 인식하고 이 기준대로 font 크기가 반영된다. 
+
+예를 들어 body에서 16px이라고 했을 떄, 어떤 하위 클래스에서 
+font-size: 1.5rem 이런식으로 했을떄, 16 * 1.5 = 24px  
+이 된다. 
+
+em은 root가 아닌 부모 요소의 크기를 참조해서 반영된다. 
+단, em에서 length를 계산 할 떄는 현재 요소의 font-size 값을 
+padding 으로 적용한다. 2em 일떄, font-size: 150% 즉, 24px
+이므로 현재 padding: 2em 은 48px과 같은 말이 된다. 
+
+%는 무조건 부모의 값을 기준으로 반영된다. 
+em은 길이가 현재 요소의 값을 기준으로 하는 것만 제외하면 
+부모의 값을 기준으로 반영된다. 
+rem은 무조건 root 를 기준으로 값이 반영된다. 
+
+이 부분에 대해서 더 학습이 필요하다면 섹션3의 16강을 다시 보자(16분)
+
+3. 상속 
+
+첫번쨰 css엔진은 묻는다. 
+케스케이드 값이 있는지? 아니면 상속 받은 속성인지? 
+예를 들어 line-height는 MDN 문서에서 상속받는 속성으로 
+기재되어 있다. 부모 요소에서 font-size가 20px에서 line-height가
+150% 일때, 자식 요소에 font-size와 line-height 값이 곱해진 값이 
+전달 되어 30px(20px * 150%)의 line-height가 적용된 값을 
+상속받게 됩니다. 키워드로 inherit와 inital 을 쓸수 있다.
+
+
+ - 글꼴 크기 html에서 62.5% 선정 이유 -
+62.5%는 페이지에 1렘이 무엇인지 정의합니다. 
+즉, 기본적으로 이미 16이므로 62.5 %는 기본값의 %를 변경하는 대신
+사용합니다. 페이지의 루트 글꼴 요소 크기 (rem)가 html에서 
+기본적으로 16px라는 것을 이해하는 방법입니다. 
+(0.625*16) = 10. 우리는 우리의 페이지가 10의 루트 또는 
+기본 글꼴 크기를 가지고 있기를 원하므로 10 
+(또는 적어도 내가 생각했던 것, 즉 10, 2rem = 10 , 
+2rem = 10 + 10 , 3rem = 30 등)에 의해 글꼴의 크기를 
+쉽게 지정할 수 있기를 바랍니다.
+
+절대 px 값 대신이 %와 rems를 사용하여 우리는 우리의 비율이 
+일정한 -어떤 글꼴 크기와 동일하기 때문에 여전히 우리가 우리의 코드에서
+정의 한 동일한 간격과 레이아웃을 볼 수 있도록, 더 큰 루트 / 
+기본 크기를 가지고 자신의 브라우저를 수정 한 사람들을 허용하고 있습니다.
+
+너무 난폭하지 않았지만 rem + %가 레이아웃을 일정하게 유지하면서 
+크기를 조정할 수 있기를 바랍니다.
+
+4. box-sizing
+width, height를 합쳐서 content 영역인데, 여기에 
+padding과 border 값을 합친 너비 및 높이를 말합니다. 
+
+5. box-types 
+- block-level box : 부모의 너비는 100% 이고 요소들은 수직형태로
+하나하나 나열된다. 높이 너비 패딩을 설정 할 수 있다. 
+display: flex, list-item, table 등이 block과 같다. 
+
+- inline-block box : block과 inline type이 합쳐진 형태인데
+박스 모델 자체는 block 모델로 작동하고 콘텐츠 영역은 인라인 모델로 
+작동한다. 줄바꿈이 없다. 인라인 요소처럼 작동하면서 높이 패딩 너비 등의
+설정이 통한다.
+
+- inline box : padding과 margin이 오직 좌우(수평)만 적용되고
+높이과 너비가 없다. 줄바꿈이 없다. 콘텐츠 영역만 차지한다. 
+
+6. position 구조 
+- Normal flow 
+아무것도 지정하지않으면 기본(Default)속성으로 position: relative 
+로 설정된다. (not float, not absolute)
+
+- Floats 
+Normal flow 흐름을 제거한다. 
+텍스트와 인라인 요소는 float를 사용한 요소에 감싸진다. 
+
+- Absolute positioning
+Normal flow 흐름을 제거한다. 
+float처럼 콘텐츠 또는 요소에 영향을 미치지 않는다. 
+
+7. stacking contexts 
+- z-index 와 연관이 깊으며 position: relative
+position: absolute 의 경우가 있다. 
+
+
+*/
