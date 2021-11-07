@@ -1,7 +1,17 @@
 .container {
+  max-width: 120rem;
+  min-height: 80rem;
+  background-color: #fff;
+  margin: 6rem 5rem;
 }
 
 .header {
+  background-color: rgba(255, 255, 255, 0.795);
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
 // .content {
