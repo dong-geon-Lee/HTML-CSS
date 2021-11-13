@@ -24,6 +24,11 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1; }
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
@@ -45,8 +50,19 @@ body {
   .heading-4--dark {
     color: #54483a; }
 
-.btn:hover {
-  background-color: #b28451; }
+.btn {
+  background-color: #c69963;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s; }
+  .btn:hover {
+    background-color: #b28451; }
 
 .mb-sm {
   margin-bottom: 2rem; }
@@ -63,4 +79,117 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center; }
+
+.nav-btn {
+  width: 4.5rem;
+  height: 2px;
+  margin-top: 4rem;
+  border: none;
+  border-radius: 0; }
+  .nav-btn::before {
+    content: "";
+    width: 4.5rem;
+    height: 2px;
+    transform: translateY(-1.5rem);
+    background-color: #fff;
+    display: block; }
+  .nav-btn::after {
+    content: "";
+    width: 4.5rem;
+    height: 2px;
+    transform: translateY(1.5rem);
+    background-color: #fff;
+    display: block; }
+
+.header {
+  grid-column: full-start / col-end 6;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr min-content min-content;
+  grid-gap: 2rem;
+  background-color: #101d2c;
+  background-image: linear-gradient(to right bottom, rgba(16, 29, 44, 0.7), rgba(16, 29, 44, 0.3)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  padding: 8rem;
+  padding-top: 4rem; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center;
+    margin-top: 3rem; }
+  .header__btn {
+    justify-self: start;
+    align-self: start; }
+  .header__seenon-text {
+    color: #f9f7f6;
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center; }
+    .header__seenon-text::before, .header__seenon-text::after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: currentColor; }
+  .header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    justify-items: center; }
+    .header__seenon-logos img {
+      height: 2.5rem; }
+
+.realtors {
+  background-color: #101d2c;
+  grid-column: col-start 7 / full-end;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: min-content min-content;
+  justify-content: center;
+  align-content: center;
+  justify-items: center; }
+  .realtors__list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-row-gap: 3.5rem;
+    grid-column-gap: 2rem;
+    align-items: center; }
+  .realtors__img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%; }
+  .realtors__sold {
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: -0.2rem; }
+
+.features {
+  margin: 15rem 0;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: flex-start; }
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem; }
+  .feature__icon {
+    width: 4rem;
+    height: 4rem;
+    fill: #c69963;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem); }
+  .feature__text {
+    font-size: 1.7rem; }
