@@ -1,18 +1,14 @@
-/* 수도 클래스 */
 .btn {
   &,
   &:link,
   &:visited {
-    display: inline-block;
-    padding: 1.5rem 4rem;
     text-transform: uppercase;
     text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
     border-radius: 10rem;
-    /* 모든 애니메이션 속성을 허용하고 축약 표현으로 .2s 사용 가능.
-  이 transition 속성은 hover와 active에 적용됩니다.
-  keyFrames를 써서 복잡하게 할 수 있는 방법과 대조되고 있다. */
-    position: relative;
     transition: all 0.2s;
+    position: relative; // ?
     font-size: $default-font-size;
     border: none;
     cursor: pointer;
@@ -31,7 +27,7 @@
   &:active,
   &:focus {
     outline: none;
-    transform: translateY(-1px);
+    transform: translateY(-5px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
@@ -40,16 +36,7 @@
     color: $color-grey-dark;
 
     &::after {
-      background-color: $color-white;
-    }
-  }
-
-  &--green {
-    background-color: $color-primary;
-    color: $color-white;
-
-    &::after {
-      background-color: $color-primary;
+      background-color: $color-white; //?
     }
   }
 
@@ -68,7 +55,7 @@
 
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
-    animation-fill-mode: backwards;
+    animation-fill-mode: backwards; // ?
   }
 }
 
@@ -82,7 +69,6 @@
     border-bottom: 1px solid $color-primary;
     padding: 3px;
     transition: all 0.2s;
-    justify-self: start;
   }
 
   &:hover {

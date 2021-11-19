@@ -1,5 +1,5 @@
 {
-  "name": "natours",
+  "name": "natours-completed",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,10 @@
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "keywords": [],
-  "author": "lee",
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-sass": "^6.0.1"
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "postcss-cli": "^9.0.2"
   }
 }
